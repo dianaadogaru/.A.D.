@@ -1,240 +1,140 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>❤️</title>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our Universe ♡</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box}body{margin:0;color:#fff;font-family:'DM Sans',sans-serif;background:#0a1026}body:before{content:'';position:fixed;inset:0;background:linear-gradient(#05091c50,#080a1a35),url('assets/foto_01.jpg') center/cover no-repeat;z-index:-1}.page{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:46px 20px 32px}.eyebrow{font-size:10px;letter-spacing:.32em;color:#e2d9ff;text-transform:uppercase;text-shadow:0 2px 9px #000}h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(42px,9vw,70px);line-height:1.05;margin:21px auto 30px;max-width:500px;text-shadow:0 3px 18px #06051a}.polaroid{border:0;cursor:pointer;background:rgba(225,219,255,.09);backdrop-filter:blur(11px) saturate(1.18);-webkit-backdrop-filter:blur(11px) saturate(1.18);border:1px solid rgba(255,255,255,.27);color:#fff;padding:12px 12px 0;width:min(78vw,290px);box-shadow:0 20px 60px #050414a8;transform:rotate(-4deg);transition:transform .3s,box-shadow .3s}.polaroid:hover{transform:rotate(-1deg) translateY(-5px);box-shadow:0 25px 65px #050414c0}.polaroid img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;filter:saturate(.86) contrast(1.04) sepia(.04) hue-rotate(5deg)}.caption{display:block;font-family:'Great Vibes',cursive;font-size:36px;padding:13px 5px 12px;color:#fff;text-shadow:0 1px 10px rgba(255,255,255,.75),0 2px 14px #090620}.hint{font-size:12px;color:#f0e8ff;margin-top:33px;text-shadow:0 2px 10px #000}.modal{position:fixed;inset:0;z-index:4;display:none;align-items:center;justify-content:center;background:#050716b8;backdrop-filter:blur(9px);padding:18px}.modal.open{display:flex}.letter{position:relative;width:min(100%,390px);min-height:420px;max-height:90svh;overflow:auto;display:flex;align-items:center;justify-content:center;padding:65px 26px 50px;text-align:center;border:1px solid #e7d5ff90;border-radius:23px;box-shadow:0 20px 80px #000a}.letter:before{content:'';position:absolute;inset:-22px;background:linear-gradient(#1010279c,#101027bc),url('assets/foto_02.jpg') center/cover;filter:blur(13px)}.content{position:relative}.small{font-size:11px;letter-spacing:.25em;color:#e4d5ff}.letter h2{font-family:'Great Vibes',cursive;font-size:48px;font-weight:400;margin:24px 0 15px}.line{width:60px;height:1px;background:#dbc3ed;margin:0 auto 23px}.letter p{font-size:17px;line-height:1.8}.close{position:absolute;top:12px;right:13px;z-index:2;background:#ffffff25;color:#fff;border:1px solid #ffffff60;border-radius:50%;width:37px;height:37px;font-size:24px;cursor:pointer}.heart{font-size:25px;color:#e6c7ed;margin-top:20px}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+ .music-control{position:fixed;right:16px;bottom:16px;z-index:12;border:1px solid #ffffff77;background:#10152bdc;color:white;border-radius:24px;padding:11px 16px;font:13px sans-serif;box-shadow:0 5px 22px #0007;cursor:pointer}
 
- 
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+/* Foto intatte: la leggera armonizzazione cromatica è applicata soltanto via CSS. */
+.cat-buttons{display:flex;justify-content:center;align-items:center;gap:clamp(10px,4vw,36px);margin:28px auto 8px;position:relative;z-index:2;max-width:500px}
+.cat-button{width:clamp(77px,23vw,120px);height:clamp(77px,23vw,120px);border:1px solid #e8d6ff77;border-radius:23px;background:linear-gradient(145deg,#fffefaed,#e8e1f4ed);padding:9px;box-shadow:0 8px 25px #06071a8c,0 0 22px #cdb0ff26;cursor:pointer;transition:transform .25s,box-shadow .25s;overflow:hidden;display:grid;place-items:center}
+.cat-button:hover,.cat-button:focus-visible{transform:translateY(-7px) scale(1.05);box-shadow:0 12px 34px #050515b8,0 0 28px #e8c4ff72;outline:none}
+.cat-button:active{transform:scale(.95)}
+.cat-button img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.cat-1 img{transform:scaleX(-1)}
+.cat-modal{position:fixed;inset:0;z-index:30;background:#050716d9;backdrop-filter:blur(12px);display:flex;justify-content:center;align-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .32s,visibility .32s}
+.cat-modal.open{opacity:1;visibility:visible}
+.cat-photo-card{position:relative;max-width:min(580px,94vw);max-height:92dvh;padding:13px 13px 16px;border-radius:19px;background:linear-gradient(160deg,#242443f7,#14152cf7);border:1px solid #dfcbff65;box-shadow:0 20px 80px #000b,0 0 30px #d2a9ff2a;text-align:center;display:flex;flex-direction:column;align-items:center}
+.cat-photo-card>img{display:block;max-width:100%;max-height:calc(92dvh - 115px);object-fit:contain;border-radius:11px;filter:saturate(.92) contrast(1.035) brightness(.97);}
+.cat-photo-card p{font-family:'DM Sans',sans-serif;font-size:clamp(17px,4vw,23px);font-weight:600;letter-spacing:.015em;color:#f5e9ff;margin:15px 6px 2px;text-shadow:0 2px 16px #c9a4f466}
+.cat-close{position:absolute;top:-13px;right:-12px;border:1px solid #ffffff80;background:#22233e;color:#fff;border-radius:50%;width:39px;height:39px;font-size:26px;cursor:pointer;z-index:2}
+@media(max-width:390px){.cat-buttons{gap:10px;margin-top:22px}.cat-button{border-radius:17px;padding:7px}}
 
-  <style>
-  
-    @font-face {
-      font-family: 'Harlow Solid Italic';
-      src: url('HARLOWSI.TTF') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+/* Quattro ricordi agli angoli della dedica */
+.letter.memory-letter{width:min(94vw,680px);max-width:680px;min-height:min(72dvh,640px);padding:72px 76px 76px;display:flex;align-items:center;justify-content:center;position:relative}
+.memory-letter .content{width:100%;max-width:475px;position:relative;z-index:1}
+.memory-letter .memory-corner{position:absolute;z-index:5;min-width:62px;min-height:51px;display:grid;place-items:center;padding:7px 10px;font-size:clamp(22px,4vw,29px);border:1px solid #e9d9ff60;border-radius:15px;background:linear-gradient(135deg,#ffffff1c,#ffffff08);box-shadow:0 3px 15px #090c2b33,inset 0 1px #ffffff22;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.memory-letter .memory-corner:hover,.memory-letter .memory-corner:focus-visible{transform:scale(1.08);background:#e9b8ff25;box-shadow:0 0 20px #e6bfff77;outline:2px solid #e8d6ff66;outline-offset:2px}
+.memory-corner.tl{top:18px;left:18px}.memory-corner.tr{top:18px;right:65px}.memory-corner.bl{bottom:18px;left:18px}.memory-corner.br{bottom:18px;right:18px}
+.memory-photo-modal{position:fixed;inset:0;z-index:45;display:flex;align-items:center;justify-content:center;background:#050719e8;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);padding:18px;visibility:hidden;opacity:0;transition:opacity .25s,visibility .25s}
+.memory-photo-modal.open{visibility:visible;opacity:1}
+.memory-photo-panel{position:relative;width:min(620px,96vw);max-height:92dvh;padding:16px;background:linear-gradient(145deg,#26233feF,#10162eeF);border:1px solid #d9c9f77d;border-radius:21px;box-shadow:0 25px 90px #000b;text-align:center}
+.memory-photo-panel img{display:block;width:100%;height:auto;max-height:calc(92dvh - 108px);object-fit:contain;border-radius:12px;filter:saturate(.95) contrast(1.025)}
+.memory-photo-panel .photo-close{position:absolute;right:-8px;top:-12px;border:1px solid #fff7;border-radius:50%;background:#23253d;color:#fff;width:40px;height:40px;font-size:27px;cursor:pointer}
+.memory-photo-panel .gallery-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px;color:#eee5ff;font-size:13px}
+.memory-photo-panel .gallery-nav button{background:#ffffff1c;color:white;border:1px solid #ffffff55;border-radius:20px;padding:7px 13px;cursor:pointer;font-size:18px}
+@media(max-width:600px){.letter.memory-letter{width:94vw;min-height:67dvh;padding:94px 25px 90px}.memory-corner.tl{top:17px;left:13px}.memory-corner.tr{top:17px;right:59px}.memory-corner.bl{bottom:15px;left:13px}.memory-corner.br{bottom:15px;right:13px}.memory-letter .content h2{font-size:clamp(36px,9vw,48px)}.memory-letter .content p{font-size:clamp(15px,4vw,17px)}}
+.memory-letter .dedication-space{min-height:clamp(180px,35dvh,350px)}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* Dedica completa, leggibile e scorrevole anche su schermi piccoli */
+.memory-letter{max-height:90dvh;overflow-y:auto;align-items:safe center;padding-top:90px;padding-bottom:85px;scrollbar-width:thin;scrollbar-color:#b9a5d888 transparent}
+.memory-letter .content{margin:auto}
+.dedication-text{font-size:clamp(13px,1.9vw,16px);line-height:1.65;color:#fff7ff;text-shadow:0 1px 9px #07081d99;overflow-wrap:break-word}
+.dedication-text p{font-size:inherit;line-height:inherit;margin:0 0 1.15em}
+.dedication-text p:last-child{margin-bottom:0}
+.memory-letter .heart{margin-top:15px}
+@media(max-width:520px){.memory-letter{padding:88px 48px 83px;max-height:88dvh}.dedication-text{font-size:13px;line-height:1.58}.dedication-text p{margin-bottom:1em}.memory-letter .memory-corner{min-width:52px;min-height:46px;padding:5px 7px;font-size:21px}.memory-corner.tl{top:13px;left:12px}.memory-corner.tr{top:13px;right:54px}.memory-corner.bl{bottom:13px;left:12px}.memory-corner.br{bottom:13px;right:12px}}
+</style></head><body><main class="page"><h1>Our Universe<br>noi ♡</h1><button class="polaroid" id="open" aria-label="Apri la dedica"><img src="assets/foto_02.jpg" alt="La nostra fotografia"><span class="caption">♡</span></button><p class="hint">✧ Boop the noses to discover what's inside 😆 ✧</p>
+<section class="cat-buttons" aria-label="Le foto dei mici">
+<button type="button" class="cat-button cat-0" data-cat="0" aria-label="Apri la foto: Vaca??? 🤣❤️"><img src="assets/foto_03.jpg" alt="Gattina tricolore"></button>
+<button type="button" class="cat-button cat-1" data-cat="1" aria-label="Apri la foto: Max the vacuum 😝❤️"><img src="assets/foto_01.png" alt="Gattino che dorme"></button>
+<button type="button" class="cat-button cat-2" data-cat="2" aria-label="Apri la foto: Piccolino the hand biter 😆❤️"><img src="assets/foto_04.jpg" alt="Gattino con il gomitolo"></button>
+</section>
+</main><audio id="soundtrack" src="assets/delivrance.mp3" preload="metadata"></audio><button id="musicToggle" class="music-control" type="button" aria-label="Attiva la musica">♫ Musica: off</button><div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Dedica"><section class="letter memory-letter">
+<button class="memory-corner tl" data-memory="arrival" aria-label="Apri il ricordo del nostro incontro">🛬❤️</button>
+<button class="memory-corner tr" data-memory="food" aria-label="Apri i nostri ricordi a tavola">🍽️💕</button>
+<button class="memory-corner bl" data-memory="treats" aria-label="Apri il ricordo dei gatti e dei premietti">🐾🥣</button>
+<button class="memory-corner br" data-memory="suitcase" aria-label="Apri il ricordo della gattina con le valigie">🧳🐱</button><button class="close" id="close" aria-label="Chiudi">×</button><div class="content"><div class="dedication-text" aria-label="Dedica"><p>You came into my life when I least expected it, in a way I could have never imagined.</p><p>And somehow, without even realizing it, you brought light into days that had forgotten what it felt like to shine.</p><p>You reminded me how beautiful it can be to feel close to someone, to smile for no particular reason, to find happiness in the simplest moments, and to look forward to tomorrow because there&#x27;s someone special to share it with.</p><p>Meeting you has already made my world brighter, warmer, and more beautiful.</p><p>And for that, I&#x27;m truly grateful.</p><p>I&#x27;m so glad life found a way to bring you to me, cara ❤️ Bacione 😘</p></div><div class="heart">♡</div></div></section></div><div id="catModal" class="cat-modal" role="dialog" aria-modal="true" aria-label="Foto del micio" aria-hidden="true"><div class="cat-photo-card"><button type="button" id="catClose" class="cat-close" aria-label="Chiudi la fotografia">×</button><img id="catPhoto" alt="Fotografia del micio"><p id="catCaption"></p></div></div>
+<script>
+const m=document.getElementById('modal');
+const audio=document.getElementById('soundtrack');
+const musicButton=document.getElementById('musicToggle');
+const START_AT=160; // 2 minuti e 40 secondi
+const FADE_MS=12000; // dissolvenza in entrata di 12 secondi
+const TARGET_VOLUME=0.45;
+let fadeFrame=null, fadeStarted=null, fadeBase=0;
+audio.volume=0;
+audio.loop=false;
+function updateMusic(){
+ const playing=!audio.paused;
+ musicButton.textContent=playing?'♫ Musica: on':'♫ Musica: off';
+ musicButton.setAttribute('aria-label',playing?'Metti in pausa la musica':'Attiva la musica');
+}
+function cancelFade(){if(fadeFrame!==null)cancelAnimationFrame(fadeFrame);fadeFrame=null;fadeStarted=null;}
+function fadeIn(){
+ cancelFade();audio.volume=0;fadeBase=0;
+ function tick(t){
+  if(fadeStarted===null)fadeStarted=t;
+  const progress=Math.min((t-fadeStarted)/FADE_MS,1);
+  audio.volume=TARGET_VOLUME*progress;
+  if(progress<1&&!audio.paused)fadeFrame=requestAnimationFrame(tick);
+  else fadeFrame=null;
+ }
+ fadeFrame=requestAnimationFrame(tick);
+}
+async function startMusic(){
+ if(!audio.paused)return;
+ try{
+  if(audio.readyState<1){
+   await new Promise((resolve,reject)=>{
+    audio.addEventListener('loadedmetadata',resolve,{once:true});
+    audio.addEventListener('error',reject,{once:true});
+    audio.load();
+   });
+  }
+  if(audio.currentTime<START_AT)audio.currentTime=START_AT;
+  await audio.play();
+  fadeIn();updateMusic();
+ }catch(err){updateMusic();}
+}
+document.getElementById('open').onclick=()=>{m.classList.add('open');startMusic()};
+musicButton.onclick=()=>{if(audio.paused)startMusic();else{cancelFade();audio.pause();updateMusic()}};
+audio.addEventListener('play',updateMusic);
+audio.addEventListener('pause',updateMusic);
+audio.addEventListener('ended',()=>{audio.currentTime=START_AT;startMusic()});
+document.getElementById('close').onclick=()=>m.classList.remove('open');
+m.onclick=e=>{if(e.target===m)m.classList.remove('open')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')m.classList.remove('open')});
+startMusic();
 
-    body {
-      font-family: 'Harlow Solid Italic', 'Satisfy', cursive, sans-serif;
-      font-weight: normal;
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.35)), url('1.jpg');
-      background-size: cover;
-      background-position: center bottom; 
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+const catPhotos=['assets/foto_05.jpg','assets/foto_06.jpg','assets/foto_07.jpg'];
+const catCaptions=['Vaca??? 🤣❤️','Max the vacuum 😝❤️','Piccolino the hand biter 😆❤️'];
+const catDialog=document.getElementById('catModal');
+const catImage=document.getElementById('catPhoto');
+const catText=document.getElementById('catCaption');
+const catClose=document.getElementById('catClose');
+let lastCatButton=null;
+function closeCat(){catDialog.classList.remove('open');catDialog.setAttribute('aria-hidden','true');if(lastCatButton)lastCatButton.focus()}
+document.querySelectorAll('[data-cat]').forEach(button=>button.addEventListener('click',()=>{
+ const n=Number(button.dataset.cat);
+ lastCatButton=button;
+ catImage.src=catPhotos[n];catImage.alt='Foto del micio';catText.textContent=catCaptions[n];
+ catDialog.classList.add('open');catDialog.setAttribute('aria-hidden','false');catClose.focus();
+ startMusic();
+}));
+catClose.addEventListener('click',closeCat);
+catDialog.addEventListener('click',event=>{if(event.target===catDialog)closeCat()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&catDialog.classList.contains('open'))closeCat()});
 
-    .card {
-      background: rgba(11, 20, 30, 0.78); 
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      max-width: 420px;
-      width: 100%;
-      border-radius: 24px;
-      padding: 28px;
-      text-align: center;
-      border: 2.5px solid rgba(52, 211, 153, 0.5);
-      box-shadow: 
-        0 0 15px rgba(52, 211, 153, 0.45), 
-        0 0 40px rgba(52, 211, 153, 0.35), 
-        0 0 80px rgba(52, 211, 153, 0.20),  
-        0 20px 45px rgba(0, 0, 0, 0.7);     
-    }
-
-    .title {
-      font-family: 'Harlow Solid Italic', 'Satisfy', cursive, sans-serif;
-      font-size: 3rem;
-      font-weight: normal;
-      margin-bottom: 16px;
-      color: #ffffff;
-      text-shadow: 
-        0 0 10px rgba(52, 211, 153, 0.7),
-        0 0 20px rgba(52, 211, 153, 0.3);
-    }
-
-    .media-wrapper {
-      position: relative;
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 18px;
-      background-color: #0d1621;
-      cursor: pointer;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .reveal-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      -webkit-filter: blur(40px) scale(1.08);
-      filter: blur(40px) scale(1.08);
-      transition: -webkit-filter 0.8s ease, filter 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 18, 26, 0.45);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-      font-weight: normal;
-      font-size: 2rem;
-      letter-spacing: 0.5px;
-      transition: opacity 0.6s ease;
-      backdrop-filter: blur(2px);
-      z-index: 2;
-    }
-
-    .media-wrapper.revealed .reveal-img {
-      -webkit-filter: blur(0) scale(1);
-      filter: blur(0) scale(1);
-    }
-
-    .media-wrapper.revealed .reveal-overlay {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .heart-particle {
-      position: absolute;
-      pointer-events: none;
-      font-size: 1.5rem;
-      user-select: none;
-      z-index: 10;
-      animation: floatAndFade 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    }
-
-    @keyframes floatAndFade {
-      0% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
-      }
-      50% {
-        opacity: 1;
-        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.3) rotate(var(--rot));
-      }
-      100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--dx) * 1.4), calc(-50% + var(--dy) - 70px)) scale(0.8) rotate(calc(var(--rot) * 2));
-      }
-    }
-
-    .message {
-      font-size: 1.5rem;
-      font-weight: normal;
-      line-height: 1.6;
-      color: #e2e8f0;
-      min-height: 2.4em;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="card">
-    <h1 class="title">La tua creazione qui❤️</h1>
-    
-    <div class="media-wrapper" id="revealBox" onclick="toggleReveal(event)">
-      <img src="paws.jpeg" alt="Special Creation" class="reveal-img" />
-      
-      <div class="reveal-overlay">
-        <span>Tocca per rivelare✨</span>
-      </div>
-    </div>
-
-    
-    <p class="message"></p>
-  </div>
-
-  <script>
-    const fullMessage = "Non vedo l'ora di vedere la tua creazione! Un grande bacione per te! ❤️";
-    let hasTyped = false;
-
-    function typeWriterMessage() {
-      if (hasTyped) return;
-      hasTyped = true;
-      
-      const msgEl = document.querySelector('.message');
-      msgEl.innerHTML = '';
-      let i = 0;
-      
-      const timer = setInterval(() => {
-        if (i < fullMessage.length) {
-          msgEl.innerHTML += fullMessage.charAt(i);
-          i++;
-        } else {
-          clearInterval(timer);
-        }
-      }, 40); 
-    }
-
-    function toggleReveal(event) {
-      const box = document.getElementById('revealBox');
-      const isOpening = !box.classList.contains('revealed');
-      
-      box.classList.toggle('revealed');
-
-      if (isOpening) {
-        spawnHearts(event, box);
-        typeWriterMessage(); 
-      }
-    }
-
-    function spawnHearts(event, container) {
-      const rect = container.getBoundingClientRect();
-      
-      const clickX = event ? (event.clientX - rect.left) : (rect.width / 2);
-      const clickY = event ? (event.clientY - rect.top) : (rect.height / 2);
-
-      const heartIcons = ['❤️', '💖', '✨', '💕', '💗'];
-      const particleCount = 14;
-
-      for (let i = 0; i < particleCount; i++) {
-        const heart = document.createElement('span');
-        heart.classList.add('heart-particle');
-        
-        heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
-
-        const dx = (Math.random() - 0.5) * 160 + 'px';
-        const dy = -(Math.random() * 100 + 30) + 'px';
-        const rot = (Math.random() - 0.5) * 80 + 'deg';
-
-        heart.style.setProperty('--dx', dx);
-        heart.style.setProperty('--dy', dy);
-        heart.style.setProperty('--rot', rot);
-
-        heart.style.left = clickX + 'px';
-        heart.style.top = clickY + 'px';
-
-        container.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 1200);
-      }
-    }
-  </script>
-
-</body>
-</html>
+</script><div id="memoryPhotoModal" class="memory-photo-modal" role="dialog" aria-modal="true" aria-label="Un nostro ricordo" aria-hidden="true"><div class="memory-photo-panel"><button class="photo-close" id="memoryPhotoClose" aria-label="Chiudi la fotografia">×</button><img id="memoryPhoto" alt="Un nostro ricordo"><div id="memoryGalleryNav" class="gallery-nav" hidden><button id="memoryPrev" aria-label="Fotografia precedente">‹</button><span id="memoryCount">1 / 3</span><button id="memoryNext" aria-label="Fotografia successiva">›</button></div></div></div><script>
+const memoryImages=["assets/foto_08.jpg", "assets/foto_09.jpg", "assets/foto_10.jpg", "assets/foto_11.jpg", "assets/foto_12.jpg", "assets/foto_13.jpg"];
+const memorySets={arrival:[0],food:[1,3,4],treats:[2],suitcase:[5]};
+const memoryModal=document.getElementById('memoryPhotoModal'), memoryPhoto=document.getElementById('memoryPhoto'), memoryNav=document.getElementById('memoryGalleryNav'), memoryCount=document.getElementById('memoryCount');
+let memorySet=[],memoryIndex=0,memoryTrigger=null;
+function updateMemory(){memoryPhoto.src=memoryImages[memorySet[memoryIndex]];memoryCount.textContent=(memoryIndex+1)+' / '+memorySet.length;memoryNav.hidden=memorySet.length<2}
+function closeMemory(){memoryModal.classList.remove('open');memoryModal.setAttribute('aria-hidden','true');if(memoryTrigger)memoryTrigger.focus()}
+document.querySelectorAll('[data-memory]').forEach(b=>b.addEventListener('click',()=>{memoryTrigger=b;memorySet=memorySets[b.dataset.memory];memoryIndex=0;updateMemory();memoryModal.classList.add('open');memoryModal.setAttribute('aria-hidden','false');document.getElementById('memoryPhotoClose').focus();if(typeof startMusic==='function')startMusic()}));
+document.getElementById('memoryPhotoClose').addEventListener('click',closeMemory);
+memoryModal.addEventListener('click',e=>{if(e.target===memoryModal)closeMemory()});
+document.getElementById('memoryPrev').addEventListener('click',()=>{memoryIndex=(memoryIndex-1+memorySet.length)%memorySet.length;updateMemory()});
+document.getElementById('memoryNext').addEventListener('click',()=>{memoryIndex=(memoryIndex+1)%memorySet.length;updateMemory()});
+let touchStart=0;memoryPhoto.addEventListener('touchstart',e=>{touchStart=e.changedTouches[0].screenX},{passive:true});memoryPhoto.addEventListener('touchend',e=>{let dx=e.changedTouches[0].screenX-touchStart;if(memorySet.length>1&&Math.abs(dx)>45){memoryIndex=(memoryIndex+(dx<0?1:-1)+memorySet.length)%memorySet.length;updateMemory()}},{passive:true});
+document.addEventListener('keydown',e=>{if(!memoryModal.classList.contains('open'))return;if(e.key==='Escape'){e.stopImmediatePropagation();closeMemory()}if(memorySet.length>1&&e.key==='ArrowRight'){memoryIndex=(memoryIndex+1)%memorySet.length;updateMemory()}if(memorySet.length>1&&e.key==='ArrowLeft'){memoryIndex=(memoryIndex-1+memorySet.length)%memorySet.length;updateMemory()}});
+</script></body></html>
